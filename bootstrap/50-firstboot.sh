@@ -43,6 +43,11 @@ sed -i '/.*rc.firstboot/d' /etc/rc.local
 EOT
 
     sed -i "/exit 0/d" ${ETC}/rc.local
+
+    if ${ENABLE_WIRELESS} && [[ "${DEVICE}" == "rpi-4-b" ]]; then
+        echo "/sbin/iw dev wlan0 set power_save off" >> ${ETC}/rc.local
+    fi
+
     echo "/etc/rc.firstboot" >> ${ETC}/rc.local
     echo "exit 0" >> ${ETC}/rc.local
 fi
