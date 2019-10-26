@@ -39,7 +39,7 @@ elif is_debian_based; then
     # /etc/rc.firstboot has to destroy itself and its traces after first run.
     cat <<EOT >> ${ETC}/rc.firstboot
 rm -f /etc/rc.firstboot
-sed -i '/.*rc.firstboot/d' /etc/rc.local
+sed -i '\|^/etc/rc.firstboot|d' /etc/rc.local
 EOT
 
     sed -i "/exit 0/d" ${ETC}/rc.local
