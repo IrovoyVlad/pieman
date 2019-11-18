@@ -14,4 +14,7 @@ We thank all the contributors to the project. Here are the full list of the peop
 * [Aram Grigoryan](https://github.com/Aramgrigoryanwb)
 * [Anton Maksimovich](https://github.com/ABSLord)
 * [Dmitriy Ivanko](https://github.com/Themanwhosmellslikesugar)
+<<<<<<< HEAD
 * [Vladislav Iarovoy](https://github.com/IrovoyVlad)
+=======
+>>>>>>> Invert blocks Globals and Arguments
