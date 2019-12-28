@@ -265,6 +265,15 @@ test_creating_dependent_params() {
     assertNull "${result}"
 }
 
+test_get_attr() {
+    def_private_var YML_FILE "../devices/rpi-3-b/test_devuan-jessie-armhf/pieman.yml"
+    local result="$(get_attr)"
+    assertEquals "${result}" ""
+    def_private_var YML_FILE "../devices/rpi-3-b/test_alpine-3.9-armhf/pieman.yml"
+    result="$(get_attr)"
+    assertEquals "${result}" "Fatal: while getting the specified attribute from devices/rpi-3-b/alpine-3.9-armhf/pieman.yml occurred the following error: alpine-3 .9-armhf does not have attribute repos."
+}
+
 test_rendering() {
     local result=""
 
